@@ -20,6 +20,7 @@ import android.content.Context
 import android.content.Intent
 import androidx.core.app.NotificationCompat
 import androidx.core.app.NotificationManagerCompat
+import androidx.work.Constraints
 import androidx.work.Worker
 import androidx.work.WorkerParameters
 import com.example.waterme.BaseApplication
@@ -43,6 +44,7 @@ class WaterReminderWorker(
             .getActivity(applicationContext, 0, intent, 0)
 
         val plantName = inputData.getString(nameKey)
+
 
         val builder = NotificationCompat.Builder(applicationContext, BaseApplication.CHANNEL_ID)
             .setSmallIcon(R.drawable.ic_android_black_24dp)
